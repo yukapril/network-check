@@ -23,8 +23,8 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-net-test",
-    "stop": "egg-scripts stop --title=egg-server-net-test",
+    "start": "egg-scripts start --daemon --title=egg-server-network-test --workers=1 --port=7011",
+    "stop": "egg-scripts stop --title=egg-server-netnetwork-test",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
