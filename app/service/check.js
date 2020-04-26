@@ -10,7 +10,8 @@ class CheckService extends Service {
       // ctx.logger.info('IP: %s', ip)
       app.logger.info('[MY] IP: %s', ip)
     } catch (e) {
-      app.logger.error(e)
+      app.logger.error('[MY] ERROR')
+      // app.logger.error(e)
     }
   }
 
@@ -20,7 +21,8 @@ class CheckService extends Service {
       const result = await ctx.curl('http://www.baidu.com/')
       app.logger.info('[BAIDU] IP: %s, rt: %s', result.res.remoteAddress, result.res.rt)
     } catch (e) {
-      app.logger.error(e)
+      app.logger.error('[BAIDU] ERROR')
+      // app.logger.error(e)
     }
   }
 }
