@@ -1,5 +1,5 @@
 {
-  "name": "network-check",
+  "name": "network-service",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -7,6 +7,7 @@
     "declarations": true
   },
   "dependencies": {
+    "@alicloud/pop-core": "^1.7.9",
     "egg": "^2.15.1",
     "egg-scripts": "^2.11.0"
   },
@@ -23,8 +24,8 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-network-test --workers=1 --port=7011",
-    "stop": "egg-scripts stop --title=egg-server-netnetwork-test",
+    "start": "egg-scripts start --daemon --title=network-service --port=17011",
+    "stop": "egg-scripts stop --title=network-service",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
