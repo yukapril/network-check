@@ -18,9 +18,18 @@ class CheckService extends Service {
     const { ctx, app } = this
     try {
       const visit = await ctx.service.net.visit('http://www.baidu.com/')
+      ctx.session.lastVisitIp = visit.remoteAddress
       app.logger.info('[BAIDU] IP: %s, rt: %s', visit.remoteAddress, visit.rt)
     } catch (e) {
       app.logger.error('[BAIDU] ERROR')
+
+      try {
+        const visit = await ctx.service.net.visit(ctx.session.lastVisitIp)
+        app.logger.info('[BAIDU_IP] IP: %s, rt: %s', visit.remoteAddress, visit.rt)
+      } catch (e2) {
+        app.logger.error('[BAIDU_IP] ERROR')
+      }
+
     }
   }
 }
